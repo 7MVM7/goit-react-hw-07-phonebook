@@ -17,14 +17,15 @@ function ContactsList () {
     dispatch(fetchContact());
   }, [dispatch]);
 
+
   return (
     !loader &&
     contacts && (
     <MyList>
-      {contacts.map(({ name, number, id }) => (
+      {contacts.map(({ name, phone, id }) => (
         <li className="contact" key={shortid.generate()}>
           <p>
-            {name}: {number}
+            {name}: {phone}
           </p>
           <button
             className="buttonDelete"
